@@ -1,27 +1,27 @@
 #include <stdio.h>
 
 typedef struct {
-    float x;
-} Kotak;
+    float posisi;
+} Objek;
 
-void cekBenturan(Kotak *a, Kotak *b) {
-    if(a->x == b->x) {
-        printf("Benturan di X=%.1f!\n", a->x);
+void deteksiTabrakan(Objek *objA, Objek *objB) {
+    if (objA->posisi == objB->posisi) {
+        printf(">> Tabrakan terdeteksi pada posisi X = %.2f\n", objA->posisi);
     } else {
-        printf("Aman\n");
+        printf(">> Tidak ada tabrakan.\n");
     }
 }
 
 int main() {
-    Kotak obj1, obj2;
-    
-    printf("Posisi obj1: ");
-    scanf("%f", &obj1.x);
-    
-    printf("Posisi obj2: ");
-    scanf("%f", &obj2.x);
-    
-    cekBenturan(&obj1, &obj2);
-    
-    return 0;
+    Objek kotak1, kotak2;
+
+    printf("Masukkan posisi X untuk kotak pertama: ");
+    scanf("%f", &kotak1.posisi);
+
+    printf("Masukkan posisi X untuk kotak kedua: ");
+    scanf("%f", &kotak2.posisi);
+
+    deteksiTabrakan(&kotak1, &kotak2);
+
+    return 0;
 }
